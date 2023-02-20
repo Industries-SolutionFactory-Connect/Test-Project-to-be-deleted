@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.68.1'
+project:
+    name: Test-Project-to-be-deleted
+    package:
+        name: Test-Project-to-be-deleted
+        api_version: '55.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Test-Project-to-be-deleted/tests
+            options:
+                outputdir: robot/Test-Project-to-be-deleted/results
+
+    robot_testdoc:
+        options:
+            path: robot/Test-Project-to-be-deleted/tests
+            output: robot/Test-Project-to-be-deleted/doc/Test-Project-to-be-deleted_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
